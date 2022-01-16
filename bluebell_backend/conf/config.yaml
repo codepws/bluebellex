@@ -1,0 +1,52 @@
+name: "bluebell"
+mode: "dev"
+version: "1.0.1"
+port: 80
+log:
+    level: "debug"
+    filename: "./log/bluebell.log"
+    max_size: 1
+    max_age: 3
+    max_backups: 5
+redisaaa:
+    - 127.0.0.1:6377
+    - 127.0.0.1:6378
+    - 127.0.0.1:6379
+dbs:
+    login_db:
+        type: "mysql"
+        host: "127.0.0.1"
+        port: 3309
+        user: "root"
+        password: "123456" 
+        database: "bluebell"
+        max_open_conns: 200
+        max_idle_conns: 50
+    shop_db:
+        type: "mysql"
+        host: "127.0.0.1"
+        port: 3307
+        user: "root"
+        password: "123456" 
+        database: "bluebell"
+        max_open_conns: 200
+        max_idle_conns: 50
+caches:
+    -   host: "127.0.0.1"
+        port: 6379   
+        password: 123456
+        db: 0
+        pool_size: 100
+        min_idle_conns: 20
+    -   host: "127.0.0.1"
+        port: 6380  
+        password: root1234
+        db: 1
+        pool_size: 100
+        min_idle_conns: 20
+    -   host: "127.0.0.1"
+        port: 6381   
+        password: root1234
+        db: 2
+        pool_size: 100
+        min_idle_conns: 20
